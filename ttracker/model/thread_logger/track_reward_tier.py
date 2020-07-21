@@ -1,5 +1,5 @@
 class Updated:
-    def __init__(self, content):
-        self.tiers_added = content['payload']['tiersAdded']
-        self.orb_count_diff = content['payload']['orbCountDiff']
-        self.inventory_updates = content['payload']['inventoryUpdates']
+    def __init__(self, payload):
+        self.tiers_added = payload['tiersAdded']
+        self.orb_count_diff = payload['orbCountDiff']
+        self.inventory_updates = payload['inventoryUpdates']

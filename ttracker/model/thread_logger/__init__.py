@@ -6,7 +6,6 @@ THREAD_FACTORY = {
     'Deck.GetDeckListsV3': deck.GetDeckListsV3,
     'Deck.GetPreconDecksV3': deck.GetPreconDecksV3,
     'Deck.UpdateDeckV3': deck.UpdateDeckV3,
-    'Event.UpdateDeckV3': event.UpdateDeckV3,
     'Event.DeckSubmitV3': event.DeckSubmitV3,
     'Event.GetActiveEventsV2': event.GetActiveEventsV2,
     'Event.GetActiveMatches': event.GetActiveMatches,
