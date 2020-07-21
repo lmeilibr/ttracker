@@ -1,5 +1,5 @@
-from arena_log.etl.fetch_card import fetch_card_list
-from arena_log.parser.player_inventory.player_cards import parser
+from ttracker.etl.fetch_card import fetch_card_list
+from ttracker.parser.player_inventory.player_cards import parser
 
 
 def test_fetch_card_list():

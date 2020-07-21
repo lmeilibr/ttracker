@@ -1,4 +1,4 @@
-from arena_log.parser.player_inventory.player_cards import parser
+from ttracker.parser.player_inventory.player_cards import parser
 import json
 
 

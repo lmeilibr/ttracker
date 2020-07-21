@@ -1,4 +1,4 @@
-from arena_log.settings import ARENA_FOLDER
+from ttracker.settings import ARENA_FOLDER
 import os
 
 
