@@ -1,4 +1,5 @@
-from arena_log.model.items.match import Deck
+from arena_log.model.items.deck import Deck
+
 
 class SubmitDeckReq:
 

@@ -1,4 +1,4 @@
-from arena_log.model.items.match import Deck
+from arena_log.model.items.deck import Deck
 
 
 class ConnectResp:
@@ -7,6 +7,5 @@ class ConnectResp:
         self.system_seat_ids = content['systemSeatIds']
         self.msg_id = content['msgId']
         self.deck_message = Deck(content['connectResp']['deckMessage'])
-        print(content)
 
 

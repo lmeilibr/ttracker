@@ -28,9 +28,3 @@ class FinalMatchResult:
         self.resultList = content['resultList']
 
 
-class Deck:
-    def __init__(self, content):
-        self.deck_cards = content['deckCards']
-        self.sideboard_cards = content.get('sideboardCards')
-        print(self.deck_cards)
-        print(self.sideboard_cards)
