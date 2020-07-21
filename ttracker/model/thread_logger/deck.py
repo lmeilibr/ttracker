@@ -2,7 +2,9 @@ from ttracker.model.items.deck import DeckList
 
 
 class CreateDeckV3:
-    pass
+    def __init__(self, content):
+        if 'request' not in content:
+            self.deck = DeckList(content['payload'])
 
 
 class GetDeckListsV3:
@@ -19,4 +21,6 @@ class GetPreconDecksV3:
 
 
 class UpdateDeckV3:
-    pass
+    def __init__(self, content):
+        if 'request' not in content:
+            self.deck = DeckList(content['payload'])

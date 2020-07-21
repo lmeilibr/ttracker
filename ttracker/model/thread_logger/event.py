@@ -1,9 +1,25 @@
+from ttracker.model.items.deck import DeckList
+
+
 class UpdateDeckV3:
     pass
 
 
 class DeckSubmitV3:
-    pass
+    def __init__(self, content):
+        if 'request' not in content:
+            payload = content['payload']
+            self.id = payload['Id']
+            self.internal_event_name = payload['InternalEventName']
+            self.player_id = payload['PlayerId']
+            self.event_type = payload['EventType']
+            self.event_sub_type = payload['EventSubType']
+            self.module_instance_data = payload['ModuleInstanceData']
+            self.current_event_state = payload['CurrentEventState']
+            self.current_module = payload['CurrentModule']
+            self.card_pool = payload['CardPool']
+            self.course_deck = DeckList(payload['CourseDeck'])
+            self.previous_opponents = payload['PreviousOpponents']
 
 
 class GetActiveEventsV2:
@@ -47,7 +63,9 @@ class GetCombinedRankInfo:
 
 
 class GetPlayerCourseV2:
-    pass
+    def __init__(self, content):
+        if 'request' not in content:
+            self.player_course = DeckSubmitV3(content)
 
 
 class GetPlayerCoursesV2:
@@ -66,12 +84,41 @@ class GetSeasonAndRankDetail:
 
 
 class Join:
-    pass
+    def __init__(self, content):
+        if 'request' not in content:
+            self.join = content['payload']
 
 
 class JoinQueue:
-    pass
+    def __init__(self, content):
+        if 'request' not in content:
+            self.result = content['payload']
 
 
 class MatchCreated:
-    pass
+    def __init__(self, content):
+        if 'request' not in content:
+            payload = content['payload']
+            self.controller_fabric_uri = payload['controllerFabricUri']
+            self.match_endpoint_host = payload['matchEndpointHost']
+            self.match_endpoint_port = payload['matchEndpointPort']
+            self.opponent_screen_name = payload['opponentScreenName']
+            self.opponent_is_wotc = payload['opponentIsWotc']
+            self.match_id = payload['matchId']
+            self.opponent_ranking_class = payload['opponentRankingClass']
+            self.opponent_ranking_tier = payload['opponentRankingTier']
+            self.opponentMythicPercentile = payload['opponentMythicPercentile']
+            self.opponentMythicLeaderboardPlace = payload[
+                'opponentMythicLeaderboardPlace']
+            self.eventId = payload['eventId']
+            self.opponent_avatar_selection = payload['opponentAvatarSelection']
+            self.opponent_card_back_selection = payload[
+                'opponentCardBackSelection']
+            self.opponent_pet_selection = payload['opponentPetSelection']
+            self.avatar_selection = payload['avatarSelection']
+            self.cardback_selection = payload['cardbackSelection']
+            self.pet_selection = payload['petSelection']
+            self.battlefield = payload['battlefield']
+            self.opponent_commander_grp_ids = payload['opponentCommanderGrpIds']
+            self.commander_grp_ids = payload['commanderGrpIds']
+            self.match_type = payload['matchType']
