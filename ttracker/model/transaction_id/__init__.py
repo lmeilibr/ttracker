@@ -11,11 +11,18 @@ ERROR = 'error'
 GRE_TO_CLIENT_EVENT = 'greToClientEvent'
 MATCH_GAME_ROOM_STATE_CHANGED_EVENT = 'matchGameRoomStateChangedEvent'
 
-message_factory = {
+MESSAGE_FACTORY = {
     AUTHENTICATE_RESPONSE: AuthenticateResponse,
     ERROR: Error,
     GRE_TO_CLIENT_EVENT: GreToClientEvent,
     MATCH_GAME_ROOM_STATE_CHANGED_EVENT: MatchGameRoomStateChangedEvent,
     'Default': NullMessage
-
 }
+
+
+def get_message_class(message_key):
+    try:
+        return MESSAGE_FACTORY[message_key]
+    except KeyError as err:
+        print(err)
+        raise KeyError

@@ -25,13 +25,12 @@ class MtgClient:
         try:
             png_url = obj['image_uris']['png']
         except:
-            print()
+            raise
 
         download_path = os.path.join(self.root_folder, arena_id)
 
         # Skip if already exists
         if os.path.exists(download_path):
-            print(f'skipping arena id {arena_id}')
             return
 
         os.makedirs(os.path.join(self.root_folder, arena_id))

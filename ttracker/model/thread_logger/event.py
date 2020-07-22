@@ -22,7 +22,7 @@ class GetActiveEventsV2:
 
 
 class GetActiveMatches:
-    def __init__(self, content):
+    def __init__(self, payload):
         pass
 
 
